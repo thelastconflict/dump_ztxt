@@ -1,0 +1,16 @@
+[package]
+name = "dump_ztxt"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+png = "0.17"
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true      # Automatically strip symbols from the binary.
+opt-level = "z"   # Optimize for size.
+panic = "abort"
